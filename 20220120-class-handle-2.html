@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #wrap {
+      width: 100vw;
+      height: 100vh;
+      /* flex */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #wrap div {
+      width: 30vw;
+      height: 30vh;
+      background: skyblue;
+      border: 1px dashed blue;
+    }
+    .on {
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <script>
+    const wrap = document.querySelector('#wrap');
+    const div = document.querySelectorAll('#wrap div');
+    console.dir(wrap);
+    wrap.addEventListener('click', function(){
+      if(wrap.classList.contains('on')){
+        wrap.classList.remove('on');
+        wrap.style.backgroundColor = "black";
+        for(i =0; i<div.length; i++){
+        div[i].style.width = '30vw';
+        div[i].style.height = '30vh';
+        }
+      } else {
+        wrap.classList.add('on');
+        wrap.style.backgroundColor = "white";
+        for(i =0; i<div.length; i++){
+        div[i].style.width = '10vw';
+        div[i].style.height = '10vh';
+        }
+      };
+    });
+
+  </script>
+</body>
+</html>
